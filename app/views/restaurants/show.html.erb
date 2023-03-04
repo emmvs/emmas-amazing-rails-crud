@@ -1,12 +1,16 @@
-<h1>Our Restaurant: <%= @restaurant.name %> 🥘</h1>
-
-<h3>More info:</h3>
-<ul>
-  <h4>Address: <%= @restaurant.address %></h4>
-  <h4>Rating: <%= "🌟" * @restaurant.rating %></h4>
-</ul>
-
-<%= link_to "Delete",
-  restaurant_path(@restaurant),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class="container mt-5">
+  <h1>Our Restaurant: <%= @restaurant.name %> 🥘</h1>
+  <br>
+  <h5>More info:</h5>
+  <ul>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Rating: <%= "🌟" * @restaurant.rating %></p>
+  </ul>
+  <br>
+  <h5>What do you want to do?</h5>
+  <ul>
+    <p><%= link_to "Edit 🔧", edit_restaurant_path(@restaurant) %></p>
+    <p><%= link_to "Delete 🗑", restaurant_path(@restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    <p><%= link_to "Bring me back! ⏎", restaurants_path %></p>
+  </ul>
+</div>

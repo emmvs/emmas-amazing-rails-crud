@@ -1,7 +1,11 @@
-<h1>All of our amazing Restaurants 👩‍🍳</h1>
-
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>All of our amazing Restaurants 👩‍🍳</h1>
+  <br>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+  <br>
+  <h5><%= link_to '🎉 Add a new Restaurant', new_restaurant_path %></h5>
+</div>
